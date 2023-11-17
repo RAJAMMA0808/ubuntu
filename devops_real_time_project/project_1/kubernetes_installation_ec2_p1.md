@@ -93,6 +93,11 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 kubeadm version
 kubectl version --short
+
+OR
+kubectl version
+kubectl version --client
+
 ```
 
 ### Initialize Kubernetes on Master Node
