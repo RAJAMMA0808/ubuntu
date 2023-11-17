@@ -65,9 +65,9 @@ chown -R sonar:sonar /opt/sonarqube
 ls -ld /opt/sonarqube
 ```
 OR
-sudo mkdir /opt/sonarqube
-sudo chown -R sonar:sonar /opt/sonarqube
-ls -ld /opt/sonarqube
+sudo mkdir /opt/sonarqube'''''
+sudo chown -R sonar:sonar /opt/sonarqube'''''
+ls -ld /opt/sonarqube'''''
 
 ### Create custom service for sonar
 ```
