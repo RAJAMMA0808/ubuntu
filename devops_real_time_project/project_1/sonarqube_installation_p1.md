@@ -92,8 +92,62 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 EOL
+ls -l /etc/systemd/system/sonarqube.service
+==========================================
+OR
+===========================
+sudo bash -c 'cat >> /etc/systemd/system/sonarqube.service <<EOL
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
 
+[Service]
+Type=forking
+User=sonar
+Group=sonar
+PermissionsStartOnly=true
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+StandardOutput=syslog
+LimitNOFILE=65536
+LimitNPROC=4096
+TimeoutStartSec=5
+Restart=always
 
+[Install]
+WantedBy=multi-user.target
+EOL'
+
+=========================
+    AND
+
+=========================
+cat <<EOL > /tmp/sonarqube.service
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=sonar
+Group=sonar
+PermissionsStartOnly=true
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+StandardOutput=syslog
+LimitNOFILE=65536
+LimitNPROC=4096
+TimeoutStartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+sudo mv /tmp/sonarqube.service /etc/systemd/system/sonarqube.service
+
+ls -l /etc/systemd/system/sonarqube.service
+==================================
 ls -l /etc/systemd/system/sonarqube.service
 ```
 
