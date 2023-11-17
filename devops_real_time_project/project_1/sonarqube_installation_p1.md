@@ -117,7 +117,7 @@ systemctl status sonarqube.service
 ```
 apt install net-tools
 netstat -plant | grep 9000
-```
+```'
 
 ### Open sonarqube on browser
 ```
