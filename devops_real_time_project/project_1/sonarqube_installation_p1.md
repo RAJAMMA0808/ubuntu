@@ -47,9 +47,9 @@ java -version
 cd /opt/
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.0.0.68432.zip
 OR
-wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
-apt install unzip -y
-unzip sonarqube-10.0.0.68432.zip
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
+sudo apt install unzip -y
+sudo unzip sonarqube-10.0.0.68432.zip
 ls
 rm -rf sonarqube-10.0.0.68432.zip
 mv sonarqube-10.0.0.68432 sonarqube
