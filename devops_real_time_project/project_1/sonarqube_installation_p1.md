@@ -71,7 +71,7 @@ ls -ld /opt/sonarqube'''''
 
 ### Create custom service for sonar
 ```
-sudoo cat >> /etc/systemd/system/sonarqube.service <<EOL
+sudo cat >> /etc/systemd/system/sonarqube.service <<EOL
 [Unit]
 Description=SonarQube service
 After=syslog.target network.target
