@@ -107,6 +107,8 @@ sudo systemctl status docker
     ===========================================================================================================
 curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o ~/kubernetes-archive-keyring.gpg
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+
+
 sudo apt-get update -y
 
 ==========================================================================================================
