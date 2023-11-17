@@ -103,7 +103,13 @@ sudo systemctl status docker
   echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
 }
 ```
+                     OR
+    ===========================================================================================================
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o ~/kubernetes-archive-keyring.gpg
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+sudo apt-get update -y
 
+==========================================================================================================
 ### Install kubeadm kubelet kubectl
 ```
 apt update && apt-get install -y kubelet=1.21* kubeadm=1.21* kubectl=1.21*                 ## For 1.21 version
